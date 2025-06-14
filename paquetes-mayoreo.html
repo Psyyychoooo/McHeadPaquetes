@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>McHEAD - Paquetes Mayoreo</title>
+  <title>Paquetes Mayoreo - McHEAD</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,47 +18,34 @@
       padding: 1em;
       text-align: center;
     }
-    .contenedor-paquetes {
+    .catalogo {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 2em;
     }
-    .paquete {
+    .producto {
       background-color: white;
       border: 1px solid #ccc;
       border-radius: 10px;
       margin: 1em;
-      padding: 1.5em;
+      padding: 1em;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      text-align: center;
     }
-    .paquete:hover {
-      transform: scale(1.05);
-    }
-    .paquete img {
-      width: 100%;
+    .producto img {
+      max-width: 100%;
       border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .paquete h2 {
-      margin-top: 0;
-    }
-    .precio {
-      font-size: 1.2em;
-      color: #27ae60;
-      margin: 0.5em 0;
+      cursor: pointer;
     }
     .btn-tiktok, .btn-instagram {
       display: inline-block;
-      margin: 5px;
+      margin-top: 10px;
       padding: 8px 16px;
+      color: white;
       border: none;
       border-radius: 5px;
       text-decoration: none;
-      color: white;
     }
     .btn-tiktok {
       background-color: #000;
@@ -74,67 +60,42 @@
       padding: 1em;
       margin-top: 2em;
     }
-    .redes {
-      text-align: center;
-      margin: 2em 0;
-    }
-    .redes a {
-      margin: 0 10px;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>McHEAD</h1>
-    <p>Paquetes por Mayoreo</p>
+    <h1>Paquetes al Mayoreo</h1>
   </header>
-
-  <section class="contenedor-paquetes">
-    <div class="paquete">
-      <img src="https://via.placeholder.com/250x200?text=Paquete+5+Gorras" alt="Paquete 5 Gorras">
-      <h2>Paquete de 5 Gorras</h2>
-      <p class="precio">$2,000 MXN</p>
-      <p>Ahorra $100 en total</p>
+  <section class="catalogo">
+    <div class="producto">
+      <img src="" alt="Paquete de 5 gorras">
+      <h2>Paquete de 5 gorras</h2>
+      <p>Precio: $1,800 MXN</p>
       <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
       <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
     </div>
-    <div class="paquete">
-      <img src="https://via.placeholder.com/250x200?text=Paquete+10+Gorras" alt="Paquete 10 Gorras">
-      <h2>Paquete de 10 Gorras</h2>
-      <p class="precio">$3,900 MXN</p>
-      <p>Ahorra $200 en total</p>
+    <div class="producto">
+      <img src="" alt="Paquete de 10 gorras">
+      <h2>Paquete de 10 gorras</h2>
+      <p>Precio: $3,500 MXN</p>
       <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
       <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
     </div>
-    <div class="paquete">
-      <img src="https://via.placeholder.com/250x200?text=Paquete+15+Gorras" alt="Paquete 15 Gorras">
-      <h2>Paquete de 15 Gorras</h2>
-      <p class="precio">$5,700 MXN</p>
-      <p>Ahorra $300 en total</p>
+    <div class="producto">
+      <img src="" alt="Paquete de 15 gorras">
+      <h2>Paquete de 15 gorras</h2>
+      <p>Precio: $5,100 MXN</p>
       <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
       <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
     </div>
-    <div class="paquete">
-      <img src="https://via.placeholder.com/250x200?text=Paquete+20+Gorras" alt="Paquete 20 Gorras">
-      <h2>Paquete de 20 Gorras</h2>
-      <p class="precio">$7,400 MXN</p>
-      <p>Ahorra $400 en total</p>
+    <div class="producto">
+      <img src="" alt="Paquete de 20 gorras">
+      <h2>Paquete de 20 gorras</h2>
+      <p>Precio: $6,600 MXN</p>
       <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
       <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
     </div>
   </section>
-
-  <section class="redes">
-    <h3>Síguenos en redes sociales:</h3>
-    <p>
-      <a href="https://www.instagram.com/mcheadoficial" target="_blank">Instagram</a> |
-      <a href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
-    </p>
-  </section>
-
   <footer>
     <p>Contáctanos en: mcheadmx@gmail.com</p>
   </footer>
