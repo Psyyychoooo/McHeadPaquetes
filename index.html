@@ -19,32 +19,6 @@
       text-align: center;
       position: relative;
     }
-    .menu-icon {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-    }
-    .menu {
-      display: none;
-      position: absolute;
-      top: 50px;
-      left: 10px;
-      background-color: #2c2c2c;
-      border-radius: 5px;
-      padding: 10px;
-    }
-    .menu a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 5px 0;
-    }
-    .menu a:hover {
-      text-decoration: underline;
-    }
     .logo-icon {
       position: absolute;
       top: 10px;
@@ -52,6 +26,44 @@
       width: 40px;
       height: 40px;
     }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-toggle div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -220px;
+      width: 200px;
+      height: 100%;
+      background-color: #2c2c2c;
+      padding: 2em 1em;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 1.5em 0;
+      font-size: 18px;
+    }
+
     .catalogo {
       display: flex;
       flex-wrap: wrap;
@@ -96,51 +108,88 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .btn-tiktok, .btn-instagram {
+    .btn-tiktok {
       display: inline-block;
       margin-top: 10px;
       padding: 8px 16px;
-      color: white;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 5px;
       text-decoration: none;
     }
-    .btn-tiktok {
-      background-color: #000;
-    }
     .btn-instagram {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
       background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
     }
     .stock {
       font-weight: bold;
       color: #c0392b;
     }
   </style>
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById('menu');
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
-    }
-  </script>
 </head>
 <body>
+
+  <!-- Menú hamburguesa y sidebar -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="sidebar" id="sidebar">
+    <a href="#">Catálogo</a>
+    <a href="https://tupaginadepaquetes.com" target="_blank">Paquetes</a> <!-- Reemplaza este link -->
+  </nav>
+
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div id="menu" class="menu">
-      <a href="index.html">Catálogo</a>
-      <a href="paquetes-mayoreo.html" target="_blank">Paquetes</a>
-    </div>
     <h1>McHEAD</h1>
     <p>Catálogo de Gorras</p>
     <img class="logo-icon" src="" alt="Logo McHEAD" />
   </header>
+
   <section class="catalogo">
-    <!-- Productos van aquí (como ya los tienes en el HTML original) -->
+   <div class="producto">
+      <img src="https://scontent.fcjs1-1.fna.fbcdn.net/v/t1.15752-9/495075906_1085825103440390_1105232790085499095_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Ot5bZlqMwBkQ7kNvwHpnOBt&_nc_oc=AdknT2xrAh2z0dlikR5CacZuFr1y9iTILR0Bje6Ce_Nu6xIxzYpXMYxhYaa9-cy0bN0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fcjs1-1.fna&oh=03_Q7cD2gFS_uCtksDfHmS2CXoMcOLBBQWiVPlmoz0XFNvyqayQ9Q&oe=6874652D" alt="Gorra A diseño de llama" />
+      <h2>Gorra A diseño de llama</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
+    </div>
+    <div class="producto">
+      <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t1.15752-9/504660835_1062546989163901_8158033654191523656_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=d4Ud0y2I6QYQ7kNvwHEEQPI&_nc_oc=AdnUlv9xt5wPl4kh6G6IDn_mO3p0v_cjsJz_ukGSRfUqOgH9ndWqFTU_ChDNNr6KNKwyuCTMeAzzYuzXFX0ZcJaQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-2.xx&oh=03_Q7cD2gHraWyW6OoBp316z6AbXdmR4ZaC-774Cnbc1zpvOTXANA&oe=6873D97C" alt="Gorra LA con rosa roja" />
+      <h2>Gorra LA con rosa roja</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
+    </div>
+    <div class="producto">
+      <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.15752-9/495076881_1253353246299130_1312755375538108258_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=BEgoBL0GyjgQ7kNvwFwIpLN&_nc_oc=Adl9tbH8xXz1Ib2ErLYefzXPBJOLY_QEzfZrZydbws0oFO_4Yvet51qpxxSYsgfTZS6hxy2QA5O_GBAnxAVd6NJf&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&oh=03_Q7cD2gGlB3Bn5oscuIXD4-EenmGA231QHvnEehlLwYZkKyONcA&oe=6873C30C" alt="Gorra de cartas" />
+      <h2>Gorra de cartas</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
+    </div>
+    <div class="producto">
+      <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.15752-9/495076961_687544070724378_2572611891299692519_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Pxn2vS1S7eMQ7kNvwEp2ryF&_nc_oc=AdmvfGMTwukCn4ibHsmF-TtunI-9uOEn0ass19q30TtsPlozSwlVQmVUXd7OHulzxnrONjco6zf5qe5zx2GUKx5S&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&oh=03_Q7cD2gFI2C1Weu34vCYd5BY8SvjP4CDSfHd2bXBAIGRB0JBQpg&oe=6873B5BF" alt="Gorra A diseño llama con visera plana" />
+      <h2>Gorra A diseño llama con visera plana</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
+    </div>
   </section>
+  </section>
+
   <section class="redes">
     <h3>Síguenos en redes sociales:</h3>
     <p>
@@ -148,8 +197,15 @@
       <a href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
     </p>
   </section>
+
   <footer>
     <p>Contáctanos en: mcheadmx@gmail.com</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
