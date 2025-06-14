@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paquetes Mayoreo - McHEAD</title>
+  <title>McHEAD - Catálogo</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,7 +17,53 @@
       color: white;
       padding: 1em;
       text-align: center;
+      position: relative;
     }
+    .logo-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-toggle div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      border-radius: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -220px;
+      width: 200px;
+      height: 100%;
+      background-color: #2c2c2c;
+      padding: 2em 1em;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 1.5em 0;
+      font-size: 18px;
+    }
+
     .catalogo {
       display: flex;
       flex-wrap: wrap;
@@ -32,26 +78,18 @@
       padding: 1em;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .producto:hover {
+      transform: scale(1.03);
     }
     .producto img {
       max-width: 100%;
       border-radius: 10px;
       cursor: pointer;
     }
-    .btn-tiktok, .btn-instagram {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .btn-tiktok {
-      background-color: #000;
-    }
-    .btn-instagram {
-      background-color: #ff69b4;
+    .producto h2 {
+      cursor: pointer;
     }
     footer {
       background-color: #2c2c2c;
@@ -60,44 +98,114 @@
       padding: 1em;
       margin-top: 2em;
     }
+    .redes {
+      text-align: center;
+      margin: 2em 0;
+    }
+    .redes a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-tiktok {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .btn-instagram {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .stock {
+      font-weight: bold;
+      color: #c0392b;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Menú hamburguesa y sidebar -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="sidebar" id="sidebar">
+    <a href="#">Catálogo</a>
+    <a href="https://tupaginadepaquetes.com" target="_blank">Paquetes</a> <!-- Reemplaza este link -->
+  </nav>
+
   <header>
-    <h1>Paquetes al Mayoreo</h1>
+    <h1>McHEAD</h1>
+    <p>Catálogo de Gorras</p>
+    <img class="logo-icon" src="" alt="Logo McHEAD" />
   </header>
+
   <section class="catalogo">
-    <div class="producto">
-      <img src="" alt="Paquete de 5 gorras">
-      <h2>Paquete de 5 gorras</h2>
-      <p>Precio: $1,800 MXN</p>
-      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
-      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
+   <div class="producto">
+      <img src="https://scontent.fcjs1-1.fna.fbcdn.net/v/t1.15752-9/495075906_1085825103440390_1105232790085499095_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Ot5bZlqMwBkQ7kNvwHpnOBt&_nc_oc=AdknT2xrAh2z0dlikR5CacZuFr1y9iTILR0Bje6Ce_Nu6xIxzYpXMYxhYaa9-cy0bN0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fcjs1-1.fna&oh=03_Q7cD2gFS_uCtksDfHmS2CXoMcOLBBQWiVPlmoz0XFNvyqayQ9Q&oe=6874652D" alt="Gorra A diseño de llama" />
+      <h2>Gorra A diseño de llama</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
     </div>
     <div class="producto">
-      <img src="" alt="Paquete de 10 gorras">
-      <h2>Paquete de 10 gorras</h2>
-      <p>Precio: $3,500 MXN</p>
-      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
-      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
+      <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t1.15752-9/504660835_1062546989163901_8158033654191523656_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=d4Ud0y2I6QYQ7kNvwHEEQPI&_nc_oc=AdnUlv9xt5wPl4kh6G6IDn_mO3p0v_cjsJz_ukGSRfUqOgH9ndWqFTU_ChDNNr6KNKwyuCTMeAzzYuzXFX0ZcJaQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-2.xx&oh=03_Q7cD2gHraWyW6OoBp316z6AbXdmR4ZaC-774Cnbc1zpvOTXANA&oe=6873D97C" alt="Gorra LA con rosa roja" />
+      <h2>Gorra LA con rosa roja</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
     </div>
     <div class="producto">
-      <img src="" alt="Paquete de 15 gorras">
-      <h2>Paquete de 15 gorras</h2>
-      <p>Precio: $5,100 MXN</p>
-      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
-      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
+      <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.15752-9/495076881_1253353246299130_1312755375538108258_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=BEgoBL0GyjgQ7kNvwFwIpLN&_nc_oc=Adl9tbH8xXz1Ib2ErLYefzXPBJOLY_QEzfZrZydbws0oFO_4Yvet51qpxxSYsgfTZS6hxy2QA5O_GBAnxAVd6NJf&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&oh=03_Q7cD2gGlB3Bn5oscuIXD4-EenmGA231QHvnEehlLwYZkKyONcA&oe=6873C30C" alt="Gorra de cartas" />
+      <h2>Gorra de cartas</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
     </div>
     <div class="producto">
-      <img src="" alt="Paquete de 20 gorras">
-      <h2>Paquete de 20 gorras</h2>
-      <p>Precio: $6,600 MXN</p>
-      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
-      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Instagram</a>
+      <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.15752-9/495076961_687544070724378_2572611891299692519_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Pxn2vS1S7eMQ7kNvwEp2ryF&_nc_oc=AdmvfGMTwukCn4ibHsmF-TtunI-9uOEn0ass19q30TtsPlozSwlVQmVUXd7OHulzxnrONjco6zf5qe5zx2GUKx5S&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&oh=03_Q7cD2gFI2C1Weu34vCYd5BY8SvjP4CDSfHd2bXBAIGRB0JBQpg&oe=6873B5BF" alt="Gorra A diseño llama con visera plana" />
+      <h2>Gorra A diseño llama con visera plana</h2>
+      <p>Precio: $399.00 MXN</p>
+      <p class="stock">Agotado :(</p>
+      <a class="btn-tiktok" href="https://www.tiktok.com/@mcheadoficial" target="_blank">Contáctame por TikTok</a>
+      <a class="btn-instagram" href="https://www.instagram.com/mcheadoficial/" target="_blank">Contáctame por Instagram</a>
     </div>
   </section>
+  </section>
+
+  <section class="redes">
+    <h3>Síguenos en redes sociales:</h3>
+    <p>
+      <a href="https://www.instagram.com/mcheadoficial" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@mcheadoficial" target="_blank">TikTok</a>
+    </p>
+  </section>
+
   <footer>
     <p>Contáctanos en: mcheadmx@gmail.com</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
